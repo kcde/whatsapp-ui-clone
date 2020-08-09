@@ -1,103 +1,197 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap");
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 html {
-  font-size: 100%;
+    font-size: 100%;
 }
 a {
-  text-decoration: none;
-  color: inherit;
+    text-decoration: none;
+    color: inherit;
 }
 body {
-  background: white;
-  font-family: "Open Sans", sans-serif;
-  font-size: 1rem;
+    background: white;
+    font-family: "Open Sans", sans-serif;
+    font-size: 1rem;
+
+    margin: 0 auto;
 }
-::-webkit-scrollbar {
-  display: none;
-  /* make scrollbar transparent */
+.mt-40 {
+    margin-top: 40px;
 }
+
+.dp-n {
+    display: none;
+}
+/* This is for later */
+.mt-60 {
+    margin-top: 60px;
+}
+
 /* .screen{
     max-width: 414px;
     margin: 0 auto;
     border: 2px solid black;
     height: 100vh;
 } */
-.header {
-  background-color: #128c7e;
-  padding-top: 5px;
-  color: white;
-  position: relative;
+
+::-webkit-scrollbar {
+    display: none;
 }
+
+.header {
+    background-color: #128c7e;
+    padding-top: 5px;
+    color: white;
+    transition: transform 350ms linear, height 350ms ease-in-out;
+    /* position: relative; */
+    /* display: none; */
+}
+
 .logo-bar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 95%;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 10px;
-  border: 1px solid red;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
+    /* border: 1px solid red */
 }
 .so {
-  display: flex;
+    display: flex;
+    /* border: 1px solid white; */
 }
 .search {
-  margin-right: 20px;
+    margin-right: 20px;
+}
+.search-btn {
+    cursor: pointer;
+}
+.form {
+    transition: transform 300ms linear;
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    height: 50px;
+    background: white;
+    box-shadow: 0 10px 2px -10px gray;
+    /* display: none; */
+}
+.form-disappear {
+    transform: translateX(800px);
+}
+.search-box {
+    width: 100%;
+    height: 100%;
+    border: none;
+    color: black;
+    font-weight: 60px;
+}
+.option-btn {
+    cursor: pointer;
+}
+.options-trans {
+    transform: translate(200px, -200px);
+}
+.options {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    background: white;
+    padding-left: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 30px;
+    box-shadow: 0px 1px 7px 5px rgba(0, 0, 0, 0.2);
+    transition: transform 300ms ease-in-out;
+}
+.options a {
+    text-transform: capitalize;
+    font-size: 13px;
+    font-weight: 400;
+    color: black;
+}
+.options a:not(:last-child) {
+    margin-bottom: 15px;
 }
 .fix {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
 }
 .nav-bar {
-  display: flex;
-  justify-content: space-evenly;
-  background-color: inherit;
-  align-items: center;
-  border: 1px solid purple;
-  padding-top: 10px;
+    display: flex;
+    justify-content: space-evenly;
+    background-color: inherit;
+    align-items: center;
+    /* border: 1px solid purple; */
+    padding-top: 10px;
 }
 
 .nav-link {
-  text-transform: uppercase;
-  font-size: 0.8rem;
-  font-weight: 600;
-  padding-bottom: 10px;
-  position: relative;
-  text-align: center;
-  color: rgba(255, 255, 255, 0.6);
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding-bottom: 10px;
+    position: relative;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.6);
 }
 
 .active {
-  color: white;
+    color: white;
+    box-shadow: 0 10px 8px -10px gray;
 }
 .active::after {
-  content: " ";
-  background: white;
-  height: 3px;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  position: absolute;
-  display: block;
+    content: " ";
+    background: white;
+    height: 3px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    position: absolute;
+    display: block;
 }
 .nav-link:hover::after {
-  opacity: 1;
+    opacity: 1;
 }
 .e,
 .r,
 .t {
-  width: 30%;
+    width: 30%;
 }
 .camera {
-  width: 10%;
+    width: 10%;
 }
 .camera i {
-  font-size: 1rem;
-  vertical-align: bottom;
+    font-size: 1rem;
+    vertical-align: bottom;
+}
+
+/* KEYFRAMES */
+
+@keyframes header-disappear {
+    0% {
+        height: 77.5px;
+    }
+    100% {
+        transform: translateY(-100px);
+        height: 50px;
+    }
+}
+
+@keyframes form-appear {
+    50% {
+    }
+}
+
+.header-disappear {
+    animation: header-disappear 750ms forwards;
 }
